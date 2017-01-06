@@ -1,4 +1,4 @@
-{
+[
   {
     "lat": 51.883,
     "lon": -176.633,
@@ -3964,6 +3964,5 @@
     "lon": 179.85,
     "wikipedia": "Nukulaelae",
     "city": "Nukulaelae"
-  },
-    length: 660
-}
+  }
+]
