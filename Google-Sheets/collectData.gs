@@ -1,12 +1,11 @@
-
-
 function collectData() {
   
   var sheet = SpreadsheetApp.getActiveSheet();
-  var deviceID = '22002f001047353136383631';
+  var deviceID = 'YOUR_DEVICE_ID_HERE';
   var accessToken = '3a21cb23bfa252111eca65dc199f86a6afa170e1';
-  var result = 'allReadings';
+  var result = 'allReadings'; 
   var response = UrlFetchApp.fetch('https://api.particle.io/v1/devices/' + deviceID + '/' + result + '?access_token=' + accessToken);
+  //returns temperature average, sum of PIR detections, microphone average, mic max amplitude, door trigger average - all over one minute intervals 
   
   try {
     var response = JSON.parse(response.getContentText()); // parse the JSON the Core API created
@@ -23,7 +22,6 @@ function collectData() {
       var d = new Date(); //timestamp
       
       sheet.appendRow([d, tempAvg, PIRsum, micAvg, micMax, doorAverage]); // append the date and data to the sheet
-      
     } 
     catch(e)
     {
